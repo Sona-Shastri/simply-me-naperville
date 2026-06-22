@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simply Me of Naperville | Beauty Salon — Haircuts, Facials, Waxing &amp; Threading</title>
+<meta name="description" content="Simply Me of Naperville — a Paul Mitchell &amp; Redken beauty salon offering haircuts, styling, facials, waxing, and threading in Naperville, IL. Call (630) 922-9330.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum-900:#2f1c28;
+    --plum-800:#43273a;
+    --rose-800:#6b3a4d;
+    --rose-700:#8a4a5f;
+    --rose-600:#b76e79;
+    --rose-500:#c98a93;
+    --blush:#e7c3cb;
+    --blush-soft:#f3e0e3;
+    --ink:#2e2528;
+    --muted:#6f6168;
+    --paper:#fbf6f5;
+    --line:#f0e2e3;
+    --gold:#c9a368;
+    --shadow:0 18px 44px -22px rgba(58,28,40,.50);
+    --shadow-sm:0 10px 26px -18px rgba(58,28,40,.45);
+    --radius:16px;
+    --serif:'Cormorant Garamond',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Poppins',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .icon{width:1em;height:1em;display:inline-block;vertical-align:-.125em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ---------- NAV ---------- */
+  header.nav{position:sticky;top:0;z-index:60;background:rgba(251,246,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:92px}
+  .brand{display:flex;align-items:center}
+  .brand .logo{height:62px;width:auto;display:block}
+  nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+  nav a.link{font-weight:500;color:var(--ink);position:relative;font-size:.95rem;opacity:.85}
+  nav a.link::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--rose-600);transition:width .25s}
+  nav a.link:hover{opacity:1}
+  nav a.link:hover::after{width:100%}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--rose-600);color:#fff;font-weight:600;font-size:.95rem;padding:12px 22px;border-radius:10px;box-shadow:var(--shadow-sm);transition:transform .2s, background .2s, box-shadow .2s;cursor:pointer;border:none}
+  .btn .icon{width:17px;height:17px}
+  .btn:hover{transform:translateY(-2px);background:var(--rose-700);box-shadow:var(--shadow)}
+  .btn.outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55);box-shadow:none}
+  .btn.outline:hover{background:rgba(255,255,255,.12);border-color:#fff}
+  .btn.outline.dark{color:var(--rose-700);border-color:var(--line);background:#fff}
+  .btn.outline.dark:hover{background:var(--paper);border-color:var(--blush)}
+  .nav .btn{padding:10px 20px}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--rose-800);padding:6px}
+  .menu-toggle .icon{width:26px;height:26px;stroke-width:2}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;color:var(--ink);
+    background:
+      radial-gradient(560px 560px at 86% 14%, rgba(231,195,203,.55), transparent 60%),
+      radial-gradient(520px 520px at 8% 88%, rgba(244,212,222,.6), transparent 62%),
+      radial-gradient(440px 440px at 58% 52%, rgba(248,232,222,.45), transparent 60%),
+      linear-gradient(160deg,#fdf6f8 0%,#f7e6ec 55%,#f1d8e3 100%);}
+  .hero .contours{position:absolute;inset:0;opacity:1;
+    background-image:radial-gradient(rgba(183,110,121,.22) 2px, transparent 2.1px);
+    background-size:30px 30px;background-position:center}
+  .hero .wrap{position:relative;z-index:5;padding-top:48px;padding-bottom:56px}
+  .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.72);border:1px solid var(--line);color:var(--rose-800);font-weight:500;font-size:.84rem;padding:7px 16px;border-radius:999px;margin-bottom:22px;letter-spacing:.2px;box-shadow:var(--shadow-sm)}
+  .hero-badge .stars{color:var(--gold);letter-spacing:1px}
+  .hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.6rem);font-weight:700;line-height:1.05;letter-spacing:-.5px;color:var(--plum-900)}
+  .hero h1 .accent{display:block;font-weight:500;color:var(--rose-600);margin-top:6px;font-size:clamp(1.6rem,3.4vw,2.5rem);letter-spacing:0}
+  .hero p.lead{font-size:1.14rem;color:var(--muted);max-width:540px;margin:20px 0 30px;font-weight:400}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-meta{margin-top:22px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.95rem;flex-wrap:wrap}
+  .hero-meta b{color:var(--rose-700)}
+  .hero-meta .stars{color:var(--gold);letter-spacing:1px}
+  .hero-meta .dot{opacity:.4}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:90px 0}
+  .section-head{text-align:center;max-width:660px;margin:0 auto 52px}
+  .eyebrow{color:var(--rose-600);font-weight:600;letter-spacing:2.5px;text-transform:uppercase;font-size:.76rem}
+  .section-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3rem);color:var(--plum-900);margin:10px 0 14px;letter-spacing:-.4px;font-weight:700}
+  .section-head p{color:var(--muted);font-size:1.05rem}
+
+  /* About */
+  #about{background:#fff}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .about-grid .eyebrow{display:block;margin-bottom:10px}
+  .about-grid h2{font-family:var(--serif);font-size:clamp(2rem,3.6vw,2.7rem);color:var(--plum-900);letter-spacing:-.4px;margin-bottom:16px;font-weight:700}
+  .about-grid p{color:var(--muted);margin-bottom:16px;font-size:1.04rem}
+  .about-grid p em{font-style:italic;color:var(--rose-700)}
+  .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:var(--paper);color:var(--rose-700);font-weight:500;font-size:.88rem;padding:8px 15px;border-radius:8px;border:1px solid var(--line)}
+  .pill .icon{width:15px;height:15px;color:var(--rose-500)}
+  .about-art{background:linear-gradient(158deg,var(--rose-700),var(--plum-900));border-radius:var(--radius);color:#fff;padding:42px 38px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .about-art .quote-mark{font-family:var(--serif);font-size:5rem;line-height:.4;color:var(--gold);display:block;height:34px}
+  .about-art .q{font-family:var(--serif);font-size:1.7rem;font-style:italic;line-height:1.4;margin:14px 0 18px}
+  .about-art .by{font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--blush)}
+  .about-art .row{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+  .about-art .stat{flex:1;min-width:110px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px}
+  .about-art .stat b{font-size:1.4rem;display:block;font-weight:700}
+  .about-art .stat span{font-size:.82rem;opacity:.85}
+
+  /* Services */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+  .card{background:#fff;border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .25s, box-shadow .25s, border-color .25s}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--blush)}
+  .card .ico{width:52px;height:52px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(150deg,#f7e3e6,#f0d2d7);color:var(--rose-700);margin-bottom:18px}
+  .card .ico .icon{width:25px;height:25px}
+  .card h3{font-family:var(--serif);font-size:1.4rem;color:var(--plum-900);margin-bottom:8px;font-weight:600}
+  .card p{color:var(--muted);font-size:.96rem}
+
+  /* Reviews */
+  #reviews{background:linear-gradient(180deg,#fff,var(--paper))}
+  .rating-banner{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 32px;box-shadow:var(--shadow-sm);width:fit-content;margin:0 auto 46px}
+  .rating-banner .num{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--rose-700);letter-spacing:-1px}
+  .rating-banner .stars{color:var(--gold);font-size:1.25rem;letter-spacing:1px}
+  .rating-banner small{color:var(--muted)}
+  .rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+  .review{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+  .review:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .review .stars{color:var(--gold);font-size:1rem;letter-spacing:1px;margin-bottom:14px}
+  .review p{font-family:var(--serif);font-size:1.3rem;font-style:italic;color:#43303a;margin-bottom:20px;line-height:1.45}
+  .review .who{display:flex;align-items:center;gap:13px}
+  .avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(150deg,var(--rose-600),var(--rose-800))}
+  .avatar .icon{width:20px;height:20px}
+  .who b{display:block;font-size:.95rem;font-weight:600}
+  .who span{font-size:.82rem;color:var(--muted)}
+  .reviews-more{text-align:center;margin-top:30px}
+
+  /* Facebook feed */
+  #feed{background:linear-gradient(180deg,var(--paper),#fff)}
+  .fb-embed{display:flex;justify-content:center;width:100%}
+  .fb-embed .fb-frame{width:500px;max-width:100%;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:#fff}
+  .fb-embed iframe{display:block;width:100%;border:none}
+  .feed-note{text-align:center;color:var(--muted);font-size:.92rem;margin-top:16px}
+  .feed-cta{text-align:center;margin-top:26px}
+
+  /* Contact */
+  #contact{background:linear-gradient(158deg,var(--plum-900),#1f1019);color:#fff}
+  #contact .eyebrow{color:var(--blush)}
+  #contact .section-head h2{color:#fff}
+  #contact .section-head p{color:rgba(252,238,240,.78)}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:38px}
+  .contact-card{display:block;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:28px 24px;text-align:center;transition:background .25s, transform .25s, border-color .25s}
+  .contact-card:hover{background:rgba(255,255,255,.10);transform:translateY(-4px);border-color:rgba(255,255,255,.25)}
+  .contact-card .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin:0 auto 14px;background:rgba(231,195,203,.18);color:var(--blush)}
+  .contact-card .ico .icon{width:22px;height:22px}
+  .contact-card h4{font-size:.98rem;margin-bottom:6px;font-weight:600}
+  .contact-card span{color:var(--blush-soft);font-weight:500;font-size:.92rem;word-break:break-word}
+  .socials{display:flex;justify-content:center;gap:14px;margin-bottom:34px;flex-wrap:wrap}
+  .social{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#fff;font-weight:500;font-size:.9rem;padding:10px 18px;border-radius:999px;transition:background .25s,border-color .25s}
+  .social:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
+  .social .icon{width:18px;height:18px}
+  .contact-cta{text-align:center}
+
+  footer{background:#190d14;color:rgba(252,238,240,.6);text-align:center;padding:34px 0;font-size:.88rem}
+  footer .brand{justify-content:center;color:#fff;margin-bottom:10px;display:inline-flex}
+  footer .brand .mark{background:rgba(255,255,255,.1)}
+  footer a{color:var(--blush)}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.show{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:820px){
+    nav ul{position:fixed;inset:72px 0 auto 0;background:#fff;flex-direction:column;gap:0;padding:8px 0;box-shadow:var(--shadow);transform:translateY(-150%);transition:transform .3s;border-bottom:1px solid var(--line)}
+    nav ul.open{transform:none}
+    nav ul li{width:100%;text-align:center;padding:13px 0;border-bottom:1px solid var(--paper)}
+    .menu-toggle{display:block}
+    .about-grid{grid-template-columns:1fr}
+    .hero{min-height:auto}
+    .hero .wrap{padding-bottom:64px}
+  }
+</style>
+</head>
+<body>
+
+<!-- icon symbol definitions -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 14l.7 1.8L21.5 17l-1.8.7L19 19.5l-.7-1.8L16.5 17l1.8-.7z"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></symbol>
+  <symbol id="i-brush" viewBox="0 0 24 24"><path d="M9.06 11.9 17 4a2.1 2.1 0 0 1 3 3l-7.9 7.94"/><path d="M7.5 12.5 5 15c-1.2 1.2-1 3-1 4 1 0 2.8.2 4-1l2.5-2.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8a7 7 0 0 1-13 4z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol>
+  <symbol id="i-thread" viewBox="0 0 24 24"><path d="M3 12c4-5 14-5 18 0-4 5-14 5-18 0z"/><circle cx="12" cy="12" r="2.2"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21l8.8-8.3a5 5 0 0 0 0-7.1z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.96.72 2.88a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.2-1.29a2 2 0 0 1 2.11-.45c.92.35 1.88.59 2.88.72A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.5 4.2 5 4.4"/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="brand" aria-label="Simply Me Salon &amp; Spa">
+      <svg class="logo" viewBox="0 0 330 110" xmlns="http://www.w3.org/2000/svg" role="img">
+        <text x="2" y="62" font-family="'Cormorant Garamond',Georgia,serif" font-size="68" font-weight="600" letter-spacing="1" fill="#2c2622">Simply Me</text>
+        <text x="186" y="84" font-family="'Poppins',sans-serif" font-size="13" font-weight="500" letter-spacing="4" fill="#2c2622">SALON &amp; SPA</text>
+        <!-- green flourish: sweeping calligraphic swash with a leaf -->
+        <g fill="none" stroke="#7ea761" stroke-width="2.4" stroke-linecap="round">
+          <path d="M8 86 C 34 70, 58 70, 80 82 C 108 97, 168 95, 214 72"/>
+          <path d="M30 78 C 14 82, 18 94, 40 90 C 58 86, 66 76, 78 80"/>
+        </g>
+        <path d="M214 72 c 4 -12, 16 -13, 26 -22 c -3 13 -11 22 -26 22 z" fill="#7ea761"/>
+        <circle cx="6" cy="86" r="2.6" fill="#7ea761"/>
+      </svg>
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a class="link" href="#about">About</a></li>
+        <li><a class="link" href="#services">Services</a></li>
+        <li><a class="link" href="#reviews">Reviews</a></li>
+        <li><a class="link" href="#feed">Updates</a></li>
+        <li><a class="link" href="#contact">Contact</a></li>
+        <li><a class="btn" href="tel:+16309229330"><svg class="icon"><use href="#i-phone"/></svg> Call Now</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><svg class="icon"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="contours"></div>
+  <div class="wrap">
+    <span class="hero-badge"><span class="stars">★★★★★</span> 4.4 on Google &nbsp;·&nbsp; Naperville, IL</span>
+    <h1>Beauty,
+      <span class="accent">served better.</span>
+    </h1>
+    <p class="lead">A full-service Paul Mitchell &amp; Redken salon offering haircuts, styling, facials, waxing &amp; threading — a relaxing experience designed to make you look and feel your best.</p>
+    <div class="hero-cta">
+      <a class="btn" href="tel:+16309229330"><svg class="icon"><use href="#i-phone"/></svg> (630) 922-9330</a>
+      <a class="btn outline dark" href="#services">View Services <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="hero-meta"><span class="stars">★★★★★</span> <b>4.4 on Google</b> <span class="dot">·</span> 4.7 on Facebook <span class="dot">·</span> Open 7 days</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="eyebrow">Our Mission</span>
+        <h2>A beauty experience, served better</h2>
+        <p>At Simply Me of Naperville, our mission is simple: to make people look <em>and</em> feel better. We pair the craft of a full-service Paul Mitchell &amp; Redken salon with the warmth and attention you deserve.</p>
+        <p>Whether you're here for a fresh cut, a relaxing facial, or precise threading, our staff is attentive to every detail — and our prices are honest and unbeatable.</p>
+        <div class="pill-row">
+          <span class="pill"><svg class="icon"><use href="#i-check"/></svg> Paul Mitchell &amp; Redken</span>
+          <span class="pill"><svg class="icon"><use href="#i-check"/></svg> Attentive Staff</span>
+          <span class="pill"><svg class="icon"><use href="#i-check"/></svg> Unbeatable Prices</span>
+          <span class="pill"><svg class="icon"><use href="#i-check"/></svg> Walk-ins Welcome</span>
+        </div>
+      </div>
+      <div class="about-art reveal">
+        <span class="quote-mark">&ldquo;</span>
+        <div class="q">Our mission is to create a beauty experience served better. We want to make people look &amp; feel better.</div>
+        <div class="by">— Simply Me of Naperville</div>
+        <div class="row">
+          <div class="stat"><b>4.4★</b><span>Google rating</span></div>
+          <div class="stat"><b>4.7★</b><span>Facebook</span></div>
+          <div class="stat"><b>7 days</b><span>Open weekly</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Offer</span>
+      <h2>Full-service hair, skin &amp; grooming</h2>
+      <p>Everything you need to look and feel your best, all under one roof.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-scissors"/></svg></div><h3>Haircuts</h3><p>Cuts for women, men &amp; kids, finished with a professional blow-dry.</p></div>
+      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-brush"/></svg></div><h3>Styling &amp; Color</h3><p>Blowouts, special-occasion styling, and Redken &amp; Paul Mitchell color.</p></div>
+      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-sparkle"/></svg></div><h3>Facials</h3><p>Relaxing, professional facials tailored to refresh and renew your skin.</p></div>
+      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-leaf"/></svg></div><h3>Waxing</h3><p>Clean, gentle waxing for face and body with lasting, smooth results.</p></div>
+      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-thread"/></svg></div><h3>Threading</h3><p>Precise eyebrow and facial threading shaped to flatter your features.</p></div>
+      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-heart"/></svg></div><h3>Brow &amp; Skin Care</h3><p>Brow shaping, tinting, and finishing touches to complete your look.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Loved by Our Clients</span>
+      <h2>What people are saying</h2>
+    </div>
+    <div class="rating-banner reveal">
+      <span class="num">4.4</span>
+      <span><span class="stars">★★★★★</span><br><small>96 Google reviews · 4.7 on Facebook</small></span>
+    </div>
+    <div class="rev-grid">
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Staff is very attentive to the customers and their prices are unbeatable."</p>
+        <div class="who"><div class="avatar"><svg class="icon"><use href="#i-user"/></svg></div><div><b>Hai D.</b><span>Google review</span></div></div>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"If you're looking for a professional and relaxing facial experience, this is the place."</p>
+        <div class="who"><div class="avatar"><svg class="icon"><use href="#i-user"/></svg></div><div><b>Ishrat Jahan</b><span>Google review</span></div></div>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Friendly, skilled staff and a welcoming salon — I always leave happy with my results."</p>
+        <div class="who"><div class="avatar"><svg class="icon"><use href="#i-user"/></svg></div><div><b>Verified Client</b><span>Facebook review</span></div></div>
+      </div>
+    </div>
+    <div class="reviews-more reveal">
+      <a class="btn outline dark" href="https://www.google.com/search?q=Simply+Me+of+Naperville+reviews" target="_blank" rel="noopener">Read more reviews on Google <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FACEBOOK FEED -->
+<section id="feed">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Stay Connected</span>
+      <h2>Recent from our Facebook</h2>
+      <p>Follow along for our latest looks, offers, and salon updates.</p>
+    </div>
+    <div class="fb-embed reveal">
+      <div class="fb-frame">
+        <iframe
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSimplyMeSalon%2F&tabs=timeline&width=500&height=640&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+          width="500" height="640"
+          style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          title="Simply Me of Naperville on Facebook"></iframe>
+      </div>
+    </div>
+    <p class="feed-note reveal">Feed not loading? <a href="https://www.facebook.com/SimplyMeSalon/" target="_blank" rel="noopener" style="color:var(--rose-700);font-weight:500">View our page directly on Facebook</a>.</p>
+    <div class="feed-cta reveal">
+      <a class="btn" href="https://www.facebook.com/SimplyMeSalon/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-fb"/></svg> Visit our Facebook page</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Come See Us</span>
+      <h2>Book your appointment</h2>
+      <p>Call or stop by Wheatland Marketplace — we'd love to make you look and feel your best.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card reveal" href="tel:+16309229330">
+        <div class="ico"><svg class="icon"><use href="#i-phone"/></svg></div><h4>Call Us</h4><span>(630) 922-9330</span>
+      </a>
+      <a class="contact-card reveal" href="sms:+16309229330">
+        <div class="ico"><svg class="icon"><use href="#i-chat"/></svg></div><h4>Text Us</h4><span>(630) 922-9330</span>
+      </a>
+      <a class="contact-card reveal" href="https://maps.google.com/?q=3108+Rte+59+%23108,+Naperville,+IL+60564" target="_blank" rel="noopener">
+        <div class="ico"><svg class="icon"><use href="#i-pin"/></svg></div><h4>Visit / Directions</h4><span>3108 Rte 59 #108, Naperville, IL 60564</span>
+      </a>
+      <div class="contact-card reveal">
+        <div class="ico"><svg class="icon"><use href="#i-clock"/></svg></div><h4>Hours</h4><span>Mon–Sun · 10 AM – 7 PM</span>
+      </div>
+    </div>
+    <div class="socials reveal">
+      <a class="social" href="https://www.facebook.com/SimplyMeSalon/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-fb"/></svg> Facebook</a>
+      <a class="social" href="https://www.instagram.com/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-ig"/></svg> Instagram</a>
+      <a class="social" href="https://www.tiktok.com/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-tiktok"/></svg> TikTok</a>
+    </div>
+    <div class="contact-cta reveal">
+      <a class="btn" href="tel:+16309229330"><svg class="icon"><use href="#i-phone"/></svg> Call to Book</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="mark"><svg class="icon"><use href="#i-sparkle"/></svg></span> Simply Me of Naperville</div>
+    <p>3108 Rte 59 #108, Naperville, IL 60564 &nbsp;·&nbsp; <a href="tel:+16309229330">(630) 922-9330</a></p>
+    <p style="margin-top:8px;opacity:.65">© <span id="year"></span> Simply Me of Naperville · Paul Mitchell &amp; Redken Salon · All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const toggle=document.getElementById('menuToggle');
+  const menu=document.getElementById('menu');
+  toggle.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+  // Reveal on scroll
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Current year
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
