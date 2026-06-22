@@ -75,6 +75,15 @@
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
   .hero-meta{margin-top:22px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.95rem;flex-wrap:wrap}
   .hero-meta b{color:var(--rose-700)}
+
+  /* ---------- COLLAGE STRIP ---------- */
+  .collage{padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
+    border-top:4px solid var(--rose-600);border-bottom:4px solid var(--rose-600);background:var(--rose-600)}
+  .collage figure{margin:0;overflow:hidden;height:clamp(170px,21vw,250px);position:relative}
+  .collage img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+  .collage figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(47,28,40,.28));opacity:0;transition:opacity .35s ease}
+  .collage figure:hover img{transform:scale(1.07)}
+  .collage figure:hover::after{opacity:1}
   .hero-meta .stars{color:var(--gold);letter-spacing:1px}
   .hero-meta .dot{opacity:.4}
 
@@ -174,6 +183,7 @@
     .about-grid{grid-template-columns:1fr}
     .hero{min-height:auto}
     .hero .wrap{padding-bottom:64px}
+    .collage{grid-template-columns:repeat(2,1fr)}
   }
 </style>
 </head>
@@ -245,6 +255,14 @@
     </div>
     <div class="hero-meta"><span class="stars">★★★★★</span> <b>4.4 on Google</b> <span class="dot">·</span> 4.7 on Facebook <span class="dot">·</span> Open 7 days</div>
   </div>
+</section>
+
+<!-- COLLAGE STRIP -->
+<section class="collage" aria-label="A glimpse of our salon &amp; spa services">
+  <figure><img src="images/spa.jpg" alt="Relaxing spa treatment" loading="lazy"></figure>
+  <figure><img src="images/eye.jpg" alt="Glamorous eye makeup" loading="lazy"></figure>
+  <figure><img src="images/henna.jpg" alt="Intricate henna design on hands" loading="lazy"></figure>
+  <figure><img src="images/facial.jpg" alt="Rejuvenating facial mask" loading="lazy"></figure>
 </section>
 
 <!-- ABOUT -->
