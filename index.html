@@ -57,7 +57,7 @@
   .menu-toggle .icon{width:26px;height:26px;stroke-width:2}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;color:var(--ink);
+  .hero{position:relative;min-height:66vh;display:flex;align-items:center;overflow:hidden;color:var(--ink);
     background:
       radial-gradient(560px 560px at 86% 14%, rgba(231,195,203,.55), transparent 60%),
       radial-gradient(520px 520px at 8% 88%, rgba(244,212,222,.6), transparent 62%),
@@ -66,7 +66,7 @@
   .hero .contours{position:absolute;inset:0;opacity:1;
     background-image:radial-gradient(rgba(183,110,121,.22) 2px, transparent 2.1px);
     background-size:30px 30px;background-position:center}
-  .hero .wrap{position:relative;z-index:5;padding-top:48px;padding-bottom:56px}
+  .hero .wrap{position:relative;z-index:5;padding-top:34px;padding-bottom:40px}
   .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.72);border:1px solid var(--line);color:var(--rose-800);font-weight:500;font-size:.84rem;padding:7px 16px;border-radius:999px;margin-bottom:22px;letter-spacing:.2px;box-shadow:var(--shadow-sm)}
   .hero-badge .stars{color:var(--gold);letter-spacing:1px}
   .hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.6rem);font-weight:700;line-height:1.05;letter-spacing:-.5px;color:var(--plum-900)}
@@ -79,11 +79,21 @@
   /* ---------- COLLAGE STRIP ---------- */
   .collage{padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
     border-top:4px solid var(--rose-600);border-bottom:4px solid var(--rose-600);background:var(--rose-600)}
-  .collage figure{margin:0;overflow:hidden;height:clamp(170px,21vw,250px);position:relative}
+  .collage figure{margin:0;overflow:hidden;height:clamp(120px,14vw,175px);position:relative}
   .collage img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
   .collage figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(47,28,40,.28));opacity:0;transition:opacity .35s ease}
   .collage figure:hover img{transform:scale(1.07)}
   .collage figure:hover::after{opacity:1}
+
+  /* ---------- MARQUEE TICKER ---------- */
+  .marquee{overflow:hidden;white-space:nowrap;background:var(--rose-600);color:#fff;padding:15px 0;
+    border-top:1px solid rgba(255,255,255,.15)}
+  .marquee-track{display:inline-flex;will-change:transform;animation:marquee 30s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee span{font-family:var(--serif);font-size:1.4rem;font-weight:600;letter-spacing:.4px;padding:0 0}
+  .marquee .star{color:var(--gold);margin:0 22px;font-size:1rem;vertical-align:middle}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
   .hero-meta .stars{color:var(--gold);letter-spacing:1px}
   .hero-meta .dot{opacity:.4}
 
@@ -406,6 +416,14 @@
     </div>
   </div>
 </section>
+
+<!-- MARQUEE TICKER -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Haircuts<i class="star">✦</i>Styling &amp; Color<i class="star">✦</i>Facials<i class="star">✦</i>Waxing<i class="star">✦</i>Threading<i class="star">✦</i>Bridal Henna<i class="star">✦</i>Paul Mitchell &amp; Redken<i class="star">✦</i>Book Today: (630) 922-9330<i class="star">✦</i></span>
+    <span>Haircuts<i class="star">✦</i>Styling &amp; Color<i class="star">✦</i>Facials<i class="star">✦</i>Waxing<i class="star">✦</i>Threading<i class="star">✦</i>Bridal Henna<i class="star">✦</i>Paul Mitchell &amp; Redken<i class="star">✦</i>Book Today: (630) 922-9330<i class="star">✦</i></span>
+  </div>
+</div>
 
 <footer>
   <div class="wrap">
