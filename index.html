@@ -57,21 +57,25 @@
   .menu-toggle .icon{width:26px;height:26px;stroke-width:2}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;min-height:42vh;padding:0;display:flex;align-items:center;overflow:hidden;color:var(--ink);
+  .hero{position:relative;min-height:58vh;padding:0;display:flex;align-items:center;overflow:hidden;color:var(--ink);
     background:#f6e2e8;}
   .hero .wrap{position:relative;z-index:5;padding-top:28px;padding-bottom:34px}
   .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.72);border:1px solid var(--line);color:var(--rose-800);font-weight:500;font-size:.84rem;padding:7px 16px;border-radius:999px;margin-bottom:22px;letter-spacing:.2px;box-shadow:var(--shadow-sm)}
   .hero-badge .stars{color:var(--gold);letter-spacing:1px}
-  .hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.6rem);font-weight:700;line-height:1.05;letter-spacing:-.5px;color:var(--plum-900)}
-  .hero h1 .accent{display:block;font-weight:500;color:var(--rose-600);margin-top:6px;font-size:clamp(1.6rem,3.4vw,2.5rem);letter-spacing:0}
-  .hero p.lead{font-size:1.14rem;color:var(--muted);max-width:540px;margin:20px 0 30px;font-weight:400}
+  .hero h1{font-family:var(--serif);font-size:clamp(3.2rem,6.6vw,5.3rem);font-weight:700;line-height:1.04;letter-spacing:-.5px;color:var(--plum-900)}
+  .hero h1 .accent{display:block;font-weight:500;color:var(--rose-600);margin-top:6px;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:0}
+  .hero p.lead{font-size:1.32rem;color:var(--muted);max-width:560px;margin:22px 0 32px;font-weight:400}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
   .hero-meta{margin-top:22px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.95rem;flex-wrap:wrap}
   .hero-meta b{color:var(--rose-700)}
 
+  /* ---------- VINE FLOURISH (under headings) ---------- */
+  .vine{display:block;width:170px;height:40px;margin:14px auto 4px}
+  .about-grid .vine{margin-left:0;margin-right:auto}
+
   /* ---------- COLLAGE STRIP ---------- */
   .collage{padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
-    border-top:4px solid var(--rose-600);border-bottom:4px solid var(--rose-600);background:var(--rose-600)}
+    border-top:4px solid var(--rose-600);background:var(--rose-600)}
   .collage figure{margin:0;overflow:hidden;height:clamp(120px,14vw,175px);position:relative}
   .collage img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
   .collage figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(47,28,40,.28));opacity:0;transition:opacity .35s ease}
@@ -215,6 +219,15 @@
   <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
   <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.5 4.2 5 4.4"/></symbol>
+  <!-- green vine flourish (matches the logo squiggle) -->
+  <symbol id="vine" viewBox="0 48 248 54">
+    <g fill="none" stroke="#7ea761" stroke-width="2.4" stroke-linecap="round">
+      <path d="M8 86 C 34 70, 58 70, 80 82 C 108 97, 168 95, 214 72"/>
+      <path d="M30 78 C 14 82, 18 94, 40 90 C 58 86, 66 76, 78 80"/>
+    </g>
+    <path d="M214 72 c 4 -12, 16 -13, 26 -22 c -3 13 -11 22 -26 22 z" fill="#7ea761"/>
+    <circle cx="6" cy="86" r="2.6" fill="#7ea761"/>
+  </symbol>
 </svg>
 
 <!-- NAV -->
@@ -286,6 +299,7 @@
       <div class="reveal">
         <span class="eyebrow">Our Mission</span>
         <h2>A beauty experience, served better</h2>
+        <svg class="vine" aria-hidden="true"><use href="#vine"/></svg>
         <p>At Simply Me of Naperville, our mission is simple: to make people look <em>and</em> feel better. We pair the craft of a full-service Paul Mitchell &amp; Redken salon with the warmth and attention you deserve.</p>
         <p>Whether you're here for a fresh cut, a relaxing facial, or precise threading, our staff is attentive to every detail — and our prices are honest and unbeatable.</p>
         <div class="pill-row">
@@ -315,6 +329,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">What We Offer</span>
       <h2>Full-service hair, skin &amp; grooming</h2>
+      <svg class="vine" aria-hidden="true"><use href="#vine"/></svg>
       <p>Everything you need to look and feel your best, all under one roof.</p>
     </div>
     <div class="cards">
@@ -334,6 +349,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Loved by Our Clients</span>
       <h2>What people are saying</h2>
+      <svg class="vine" aria-hidden="true"><use href="#vine"/></svg>
     </div>
     <div class="rating-banner reveal">
       <span class="num">4.4</span>
@@ -368,6 +384,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Stay Connected</span>
       <h2>Recent from our Facebook</h2>
+      <svg class="vine" aria-hidden="true"><use href="#vine"/></svg>
       <p>Follow along for our latest looks, offers, and salon updates.</p>
     </div>
     <div class="fb-embed reveal">
