@@ -70,15 +70,16 @@
   .hero-meta b{color:var(--rose-700)}
 
   /* ---------- VINE FLOURISH (under headings) ---------- */
-  .vine{display:block;width:170px;height:40px;margin:14px auto 4px}
+  .vine{display:block;width:235px;height:50px;margin:-6px auto 10px}
   .about-grid .vine{margin-left:0;margin-right:auto}
 
   /* ---------- COLLAGE STRIP ---------- */
   .collage{padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
     border-top:4px solid var(--rose-600);background:var(--rose-600)}
-  .collage figure{margin:0;overflow:hidden;height:clamp(120px,14vw,175px);position:relative}
+  .collage figure{margin:0;overflow:hidden;height:clamp(120px,14vw,175px);position:relative;cursor:pointer}
+  .collage figure a{display:block;width:100%;height:100%}
   .collage img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-  .collage figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(47,28,40,.28));opacity:0;transition:opacity .35s ease}
+  .collage figure::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(47,28,40,.28));opacity:0;transition:opacity .35s ease}
   .collage figure:hover img{transform:scale(1.07)}
   .collage figure:hover::after{opacity:1}
 
@@ -278,10 +279,10 @@
 
 <!-- COLLAGE STRIP -->
 <section class="collage" aria-label="A glimpse of our salon &amp; spa services">
-  <figure><img src="images/spa.jpg" alt="Relaxing spa treatment" loading="lazy"></figure>
-  <figure><img src="images/eye.jpg" alt="Glamorous eye makeup" loading="lazy"></figure>
-  <figure><img src="images/henna.jpg" alt="Intricate henna design on hands" loading="lazy"></figure>
-  <figure><img src="images/facial.jpg" alt="Rejuvenating facial mask" loading="lazy"></figure>
+  <figure><a href="#services" aria-label="View our services"><img src="images/spa.jpg" alt="Relaxing spa treatment" loading="lazy"></a></figure>
+  <figure><a href="#services" aria-label="View our services"><img src="images/eye.jpg" alt="Glamorous eye makeup" loading="lazy"></a></figure>
+  <figure><a href="#services" aria-label="View our services"><img src="images/henna.jpg" alt="Intricate henna design on hands" loading="lazy"></a></figure>
+  <figure><a href="#services" aria-label="View our services"><img src="images/facial.jpg" alt="Rejuvenating facial mask" loading="lazy"></a></figure>
 </section>
 
 <!-- MARQUEE TICKER -->
