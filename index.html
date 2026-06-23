@@ -71,7 +71,7 @@
   .hero-meta b{color:var(--rose-700)}
 
   /* ---------- VINE FLOURISH (under headings) ---------- */
-  .vine{display:block;width:235px;height:50px;margin:-15px auto 10px}
+  .vine{display:block;width:235px;height:50px;margin:-32px auto 10px}
   .about-grid .vine{margin-left:0;margin-right:auto}
 
   /* ---------- COLLAGE STRIP ---------- */
@@ -124,7 +124,7 @@
 
   /* Services */
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
-  .card{background:#fff;border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .25s, box-shadow .25s, border-color .25s}
+  .card{display:block;color:inherit;background:#fff;border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .25s, box-shadow .25s, border-color .25s}
   .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--blush)}
   .card .ico{width:52px;height:52px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(150deg,#f7e3e6,#f0d2d7);color:var(--rose-700);margin-bottom:18px}
   .card .ico .icon{width:25px;height:25px}
@@ -265,7 +265,7 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="wrap">
-    <span class="hero-badge"><span class="stars">★★★★★</span> 4.4 on Google &nbsp;·&nbsp; Naperville, IL</span>
+    <a class="hero-badge" href="https://maps.google.com/?q=3108+Rte+59+%23108,+Naperville,+IL+60564" target="_blank" rel="noopener"><svg class="icon" style="width:15px;height:15px"><use href="#i-pin"/></svg> 3108 Rte 59 #108, Naperville, IL 60564</a>
     <h1>Beauty,
       <span class="accent">served better.</span>
     </h1>
@@ -335,12 +335,12 @@
       <p>Everything you need to look and feel your best, all under one roof.</p>
     </div>
     <div class="cards">
-      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-scissors"/></svg></div><h3>Haircuts</h3><p>Cuts for women, men &amp; kids, finished with a professional blow-dry.</p></div>
-      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-brush"/></svg></div><h3>Styling &amp; Color</h3><p>Blowouts, special-occasion styling, and Redken &amp; Paul Mitchell color.</p></div>
-      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-sparkle"/></svg></div><h3>Facials</h3><p>Relaxing, professional facials tailored to refresh and renew your skin.</p></div>
-      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-leaf"/></svg></div><h3>Waxing</h3><p>Clean, gentle waxing for face and body with lasting, smooth results.</p></div>
-      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-thread"/></svg></div><h3>Threading</h3><p>Precise eyebrow and facial threading shaped to flatter your features.</p></div>
-      <div class="card reveal"><div class="ico"><svg class="icon"><use href="#i-heart"/></svg></div><h3>Brow &amp; Skin Care</h3><p>Brow shaping, tinting, and finishing touches to complete your look.</p></div>
+      <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-scissors"/></svg></div><h3>Haircuts</h3><p>Cuts for women, men &amp; kids, finished with a professional blow-dry.</p></a>
+      <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-brush"/></svg></div><h3>Styling &amp; Color</h3><p>Blowouts, special-occasion styling, and Redken &amp; Paul Mitchell color.</p></a>
+      <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-sparkle"/></svg></div><h3>Facials</h3><p>Relaxing, professional facials tailored to refresh and renew your skin.</p></a>
+      <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-leaf"/></svg></div><h3>Waxing</h3><p>Clean, gentle waxing for face and body with lasting, smooth results.</p></a>
+      <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-thread"/></svg></div><h3>Threading</h3><p>Precise eyebrow and facial threading shaped to flatter your features.</p></a>
+      <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-heart"/></svg></div><h3>Brow &amp; Skin Care</h3><p>Brow shaping, tinting, and finishing touches to complete your look.</p></a>
     </div>
   </div>
 </section>
