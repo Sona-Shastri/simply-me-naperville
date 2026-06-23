@@ -125,6 +125,8 @@
   /* Services */
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
   .svc-note{text-align:center;margin-top:28px;color:var(--muted);font-size:.95rem;font-style:italic}
+  .card:target{border-color:var(--rose-600);background:var(--blush-soft);box-shadow:var(--shadow);transform:translateY(-4px)}
+  .card:target .ico{background:var(--rose-600);color:#fff}
   .card{display:block;color:inherit;background:#fff;border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .25s, box-shadow .25s, border-color .25s}
   .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--blush)}
   .card .ico{width:52px;height:52px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(150deg,#f7e3e6,#f0d2d7);color:var(--rose-700);margin-bottom:18px}
@@ -281,10 +283,10 @@
 
 <!-- COLLAGE STRIP -->
 <section class="collage" aria-label="A glimpse of our salon &amp; spa services">
-  <figure><a href="#services" aria-label="View our services"><img src="images/spa.jpg" alt="Relaxing spa treatment" loading="lazy"></a></figure>
-  <figure><a href="#services" aria-label="View our services"><img src="images/eye.jpg" alt="Glamorous eye makeup" loading="lazy"></a></figure>
-  <figure><a href="#services" aria-label="View our services"><img src="images/henna.jpg" alt="Intricate henna design on hands" loading="lazy"></a></figure>
-  <figure><a href="#services" aria-label="View our services"><img src="images/facial.jpg" alt="Rejuvenating facial mask" loading="lazy"></a></figure>
+  <figure><a href="#svc-facials" aria-label="View facials"><img src="images/spa.jpg" alt="Relaxing spa treatment" loading="lazy"></a></figure>
+  <figure><a href="#svc-makeup" aria-label="View makeup"><img src="images/eye.jpg" alt="Glamorous eye makeup" loading="lazy"></a></figure>
+  <figure><a href="#svc-henna" aria-label="View bridal henna"><img src="images/henna.jpg" alt="Intricate henna design on hands" loading="lazy"></a></figure>
+  <figure><a href="#svc-facials" aria-label="View facials"><img src="images/facial.jpg" alt="Rejuvenating facial mask" loading="lazy"></a></figure>
 </section>
 
 <!-- MARQUEE TICKER -->
@@ -338,11 +340,12 @@
     <div class="cards">
       <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-scissors"/></svg></div><h3>Haircuts</h3><p>Cuts for women, men &amp; kids, finished with a professional blow-dry.</p></a>
       <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-brush"/></svg></div><h3>Styling &amp; Color</h3><p>Blowouts, special-occasion styling, and Redken &amp; Paul Mitchell color.</p></a>
-      <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-sparkle"/></svg></div><h3>Facials</h3><p>Relaxing, professional facials tailored to refresh and renew your skin.</p></a>
+      <a class="card reveal" id="svc-facials" href="#contact"><div class="ico"><svg class="icon"><use href="#i-sparkle"/></svg></div><h3>Facials</h3><p>Relaxing, professional facials tailored to refresh and renew your skin.</p></a>
       <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-leaf"/></svg></div><h3>Waxing</h3><p>Clean, gentle waxing for face and body with lasting, smooth results.</p></a>
       <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-thread"/></svg></div><h3>Threading</h3><p>Precise eyebrow and facial threading shaped to flatter your features.</p></a>
       <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-heart"/></svg></div><h3>Brow &amp; Skin Care</h3><p>Brow shaping, tinting, and finishing touches to complete your look.</p></a>
-      <a class="card reveal" href="#contact"><div class="ico"><svg class="icon"><use href="#i-sparkle"/></svg></div><h3>Bridal Henna</h3><p>Intricate mehndi designs for weddings, parties, and special occasions.</p></a>
+      <a class="card reveal" id="svc-henna" href="#contact"><div class="ico"><svg class="icon"><use href="#i-sparkle"/></svg></div><h3>Bridal Henna</h3><p>Intricate mehndi designs for weddings, parties, and special occasions.</p></a>
+      <a class="card reveal" id="svc-makeup" href="#contact"><div class="ico"><svg class="icon"><use href="#i-brush"/></svg></div><h3>Makeup</h3><p>Flawless makeup for weddings, parties, and every special occasion.</p></a>
     </div>
     <p class="svc-note reveal">FYI: Call to book — walk-ins welcome based on availability.</p>
   </div>
